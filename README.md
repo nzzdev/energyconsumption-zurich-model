@@ -18,7 +18,7 @@ Columns:
 * NE7 (Netzebene 7) = Households, small Companies (KMU)
 
 ## Installation on Mac M1
-Mac Silicon is a pain... again... Scikit-Learn needs a lot of love to get installed. And Prophet does not work on newest Python Version in Mac M1 (error Message: `python3.10/site-packages/prophet/stan_model/prophet_model.bin Reason: image not found`)... So:  
+Mac Silicon is a pain... again... Scikit-Learn needs a lot of love to get installed. And Prophet does not work on newest Python Version in Mac M1 (error Message: `python3.10/site-packages/prophet/stan_model/prophet_model.bin Reason: image not found`)... And not the newest version (1.1), you need 1.0... So:  
 
 **Use Python 3.8!**
 
