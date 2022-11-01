@@ -16,3 +16,41 @@ This is the model, made by ewz, rewritten by shu. Further information at [EWZ](h
 Columns:
 * NE5 (Netzebene 5) = Bigger Companies
 * NE7 (Netzebene 7) = Households, small Companies (KMU)
+
+## Installation on Mac M1
+Mac Silicon is a pain... again... Scikit-Learn needs a lot of love to get installed. And Prophet does not work on newest Python Version in Mac M1 (error Message: `python3.10/site-packages/prophet/stan_model/prophet_model.bin Reason: image not found`)... So:  
+
+**Use Python 3.8!**
+
+```
+python3.8 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
+
+If Scikit-learn throws errors:
+```
+brew install openblas
+export OPENBLAS=$(/opt/homebrew/bin/brew --prefix openblas)
+export CFLAGS="-falign-functions=8 ${CFLAGS}"
+pip install scikit-learn
+```
+[Source](https://github.com/scipy/scipy/issues/13409)
+
+Sometimes Openblas is not linked correctly. Do:
+```
+brew link openblas --force
+```
+
+Other ways...
+```
+pip install cython pybind11 pythran numpy
+OPENBLAS=$(brew --prefix openblas) CFLAGS="-falign-functions=8 ${CFLAGS}" pip install --no-use-pep517 scipy==1.3.2
+```
+or
+```
+pip3 install -U --no-use-pep517 scikit-learn
+```
+
+
+
