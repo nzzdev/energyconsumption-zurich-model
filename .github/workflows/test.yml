@@ -27,4 +27,4 @@ jobs:
           pip install -r ./requirements-action.txt
       - name: Run python scripts
         run: |
-          python ./src/test.py
+          python ./src/actiontest.py
