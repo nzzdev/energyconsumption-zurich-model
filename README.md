@@ -17,8 +17,19 @@ Columns:
 * NE5 (Netzebene 5) = Bigger Companies
 * NE7 (Netzebene 7) = Households, small Companies (KMU)
 
+[More infos here](https://www.swissgrid.ch/de/home/operation/power-grid/grid-levels.html)
+
+## Installation
+*For Mac M1, goto: Next Chapter*
+```
+python3.8 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
+
+
 ## Installation on Mac M1
-Mac Silicon is a pain... again... Scikit-Learn needs a lot of love to get installed. And Prophet does not work on newest Python Version in Mac M1 (error Message: `python3.10/site-packages/prophet/stan_model/prophet_model.bin Reason: image not found`)... And not the newest version (1.1), you need 1.0... So:  
+Mac Silicon is a pain... again... Scikit-Learn needs a lot of love to get installed. And Prophet does not work on newest Python Version on Mac M1 (error Message: `python3.10/site-packages/prophet/stan_model/prophet_model.bin Reason: image not found`)... And not the newest version (1.1), you need 1.0... So:  
 
 **Use Python 3.8!**
 
@@ -51,6 +62,3 @@ or
 ```
 pip3 install -U --no-use-pep517 scikit-learn
 ```
-
-
-
