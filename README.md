@@ -1,7 +1,9 @@
 # Model: Energy Consumption in Zurich
 This is the model, made by [Zurich City Electricity Company (ewz)](https://www.ewz.ch/), rewritten by shu for [Neue Zürcher Zeitung](https://www.nzz.ch/). Further information at [ewz](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html). See it in Action [here](https://www.nzz.ch/-ld.1710613).
 
-![Energy Consumption in Zurich](doc/chart.png)
+<p align="center">
+  <img src="doc/chart.png" alt="Energy Consumption in Zurich" width="500"/>
+</p>
 
 ## How the model works
 > The statistically expected electricity consumption generated with machine learning is calculated for the previous seven days and displayed as a daily average in a bandwidth. In addition, the actual measured weather data is used and the upper and lower limits of the statistically expected electricity consumption are calculated with a regression model (Prophet library). The actual electricity consumption is also based on the average measured values of the last seven days (rolling average) so that the two values can be compared with each other. The regression model was trained with the measured consumption and weather data of the city of Zurich from 1 January 2010 to 31 December 2021. Thanks to this procedure, deviations due to weekends and public holidays can be taken into account, as these do not fall on the same date every year and energy consumption is lower than during the week. [Source](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html)
