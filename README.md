@@ -1,5 +1,5 @@
 # Model: Energy Consumption in Zurich
-This is the model, made by [Zurich City Electricity Company (ewz)](https://www.ewz.ch/), rewritten by [shu](https://www.nzz.ch/impressum/simon-huwiler-shu-ld.1650592) for [Neue Zürcher Zeitung](https://www.nzz.ch/). Further information at [ewz](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html). See [daily updated charts here](https://www.nzz.ch/visuals/diese-grafiken-zeigen-ob-zuerich-strom-spart-ld.1710613).
+Here you can find the prediction model for Zurich, made by [Zurich City Electricity Company (ewz)](https://www.ewz.ch/), rewritten by [shu](https://www.nzz.ch/impressum/simon-huwiler-shu-ld.1650592) for [Neue Zürcher Zeitung](https://www.nzz.ch/). Further information at [ewz](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html). See [daily updated charts here](https://www.nzz.ch/visuals/diese-grafiken-zeigen-ob-zuerich-strom-spart-ld.1710613).
 
 <p align="center">
   <img src="doc/chart.png" alt="Energy Consumption in Zurich" width="500"/>
@@ -15,7 +15,7 @@ This is the model, made by [Zurich City Electricity Company (ewz)](https://www.e
 ## Why no weather data?
 Although MeteoSwiss is a public authority and its data should actually be public according to Open Government Data, it is not. For legal reasons, we cannot make the weather data publicly available. We have proceeded as follows:
 * **Historical data to train the model**: Write to MeteoSwiss (kundendienst@meteoswiss.ch), specify daily mean temperature for desired measuring station. We used: Value `tre200h0`, Station `REH`, Range `2010-01-01 - now`. But maybe [your desired station is already Open Data](https://opendata.swiss/de/dataset/klimamessnetz-tageswerte).
-* **Current values for forecast**: Accessing the MeteoSwiss API with live data costs a lot of money. Don't do that. We scrape it directly from the website. [Have a look at this script](https://github.com/nzzdev/st-methods/blob/master/bots/strom-charts-ch/prediction_zuerich.py).
+* **Current values for forecast**: Accessing the MeteoSwiss API with live data costs a lot of money. Don't do that. We scrape it directly from their website. [Have a look at this script](https://github.com/nzzdev/st-methods/blob/master/bots/strom-charts-ch/prediction_zuerich.py).
 
 ## Installation
 *For Mac M1, goto: `Installation on Mac M1`*
