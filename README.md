@@ -10,7 +10,7 @@ This is the model, made by [Zurich City Electricity Company (ewz)](https://www.e
 
 ## Why no weather data?
 Although MeteoSwiss is a public authority and its data should actually be public according to Open Government Data, it is not. For legal reasons, we cannot make the weather data publicly available. We have proceeded as follows:
-* **Historical data to train the model**: Write to MeteoSwiss (kundendienst@meteoswiss.ch), specify daily mean temperature for desired measuring station. We used: Value `tre200h0`, Station `REH`, Range `2010-01-01 - now`. But maybe [your desired station is already Open Data](https://opendata.swiss/de/organization/bundesamt-fur-meteorologie-und-klimatologie-meteoschweiz).
+* **Historical data to train the model**: Write to MeteoSwiss (kundendienst@meteoswiss.ch), specify daily mean temperature for desired measuring station. We used: Value `tre200h0`, Station `REH`, Range `2010-01-01 - now`. But maybe [your desired station is already Open Data](https://opendata.swiss/de/dataset/klimamessnetz-tageswerte).
 * **Current values for forecast**: Accessing the MeteoSwiss API with live data costs a lot of money. Don't do that. We scrape it directly from the website. [Have a look at this script](https://github.com/nzzdev/st-methods/blob/master/bots/strom-charts-ch/prediction_zuerich.py).
 
 ## Installation
@@ -29,7 +29,7 @@ This script aggregates weather and power data and created a parquet file.
 This script trains the model using the prepared data.
 
 ### 3. How to predict?
-Now you are ready to make predictions. Load the model and give it data. Like this:
+Now you are ready to make predictions. Load the model and feed it data. Like this:
 ```python
 from prophet.serialize import model_from_json
 df_predict_all = predict(Path('./zh-models/totalconsumption_rolling7day.json'), df_data, 'consumption_total')
