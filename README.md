@@ -36,7 +36,12 @@ This script trains the model using the prepared data.
 Now you are ready to make predictions. Load the model and feed it data. Like this:
 ```python
 from prophet.serialize import model_from_json
-df_predict_all = predict(Path('./zh-models/totalconsumption_rolling7day.json'), df_data, 'consumption_total')
+
+with open('./zh-models/totalconsumption_rolling7day.json', 'r') as fin:
+    m = model_from_json(fin.read())
+
+forecastTrain = m.predict(df)   
+
 ```
 You can find [a more detailed script here](https://github.com/nzzdev/st-methods/blob/master/bots/strom-charts-ch/prediction_zuerich.py).
 
