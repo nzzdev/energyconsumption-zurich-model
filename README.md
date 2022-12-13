@@ -1,5 +1,5 @@
 # Model: Energy Consumption in Zurich
-This is the model, made by ewz, rewritten by shu for Neue Zürcher Zeitung. Further information at [EWZ](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html). See it in Action [here](https://www.nzz.ch/-ld.1710613).
+This is the model, made by [Zurich City Electricity Company (ewz)](https://www.ewz.ch/), rewritten by shu for Neue Zürcher Zeitung. Further information at [ewz](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html). See it in Action [here](https://www.nzz.ch/-ld.1710613).
 
 ## How the model works
 > The statistically expected electricity consumption generated with machine learning is calculated for the previous seven days and displayed as a daily average in a bandwidth. In addition, the actual measured weather data is used and the upper and lower limits of the statistically expected electricity consumption are calculated with a regression model (Prophet library). The actual electricity consumption is also based on the average measured values of the last seven days (rolling average) so that the two values can be compared with each other. The regression model was trained with the measured consumption and weather data of the city of Zurich from 1 January 2010 to 31 December 2021. Thanks to this procedure, deviations due to weekends and public holidays can be taken into account, as these do not fall on the same date every year and energy consumption is lower than during the week. [Source](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html)
@@ -10,8 +10,8 @@ This is the model, made by ewz, rewritten by shu for Neue Zürcher Zeitung. Furt
 
 ## Why no weather data?
 Although MeteoSwiss is a public authority and its data should actually be public according to Open Government Data, it is not. For legal reasons, we cannot make the weather data publicly available. We have proceeded as follows:
-* **Historical data to train the model**: Write to MeteoSwiss (kundendienst@meteoswiss.ch), specify daily mean temperature for desired measuring station. We used: Value `tre200h0`, Station `REH`, Range `2010-01-01 - now`.
-* **Current values for forecast**: We scrape the data directly from the website. [Have a look at this script](https://github.com/nzzdev/st-methods/blob/master/bots/strom-charts-ch/prediction_zuerich.py).
+* **Historical data to train the model**: Write to MeteoSwiss (kundendienst@meteoswiss.ch), specify daily mean temperature for desired measuring station. We used: Value `tre200h0`, Station `REH`, Range `2010-01-01 - now`. But maybe [your desired station is already Open Data](https://opendata.swiss/de/organization/bundesamt-fur-meteorologie-und-klimatologie-meteoschweiz).
+* **Current values for forecast**: Accessing the MeteoSwiss API with live data costs a lot of money. Don't do that. We scrape it directly from the website. [Have a look at this script](https://github.com/nzzdev/st-methods/blob/master/bots/strom-charts-ch/prediction_zuerich.py).
 
 ## Installation
 *For Mac M1, goto: `Installation on Mac M1`*
