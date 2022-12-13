@@ -8,11 +8,33 @@ This is the model, made by ewz, rewritten by shu for Neue Zürcher Zeitung. Furt
 * [Energy Consumption data](https://data.stadt-zuerich.ch/dataset/ewz_stromabgabe_netzebenen_stadt_zuerich)
 * Weather data (Meteo Schweiz)
 
-## Scripts
-* `PrepareTrainData.ipynb`  
-Prepare the data
-* `TrainFinalModel.ipynb`  
-Train model
+## Why no weather data?
+Although MeteoSwiss is a public authority and its data should actually be public according to Open Government Data, it is not. For legal reasons, we cannot make the weather data publicly available. We have proceeded as follows:
+* **Historical data to train the model**: Write to MeteoSwiss (kundendienst@meteoswiss.ch), specify daily mean temperature for desired measuring station. We used: Value `tre200h0`, Station `REH`, Range `2010-01-01 - now`.
+* **Current values for forecast**: We scrape the data directly from the website. [Have a look at this script](https://github.com/nzzdev/st-methods/blob/master/bots/strom-charts-ch/prediction_zuerich.py).
+
+## Installation
+*For Mac M1, goto: `Installation on Mac M1`*
+```
+python3.8 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
+
+## How to use the scripts
+### 1. `PrepareTrainData.ipynb`  
+This script aggregates weather and power data and created a parquet file.
+
+### 2. `TrainFinalModel.ipynb`  
+This script trains the model using the prepared data.
+
+### 3. How to predict?
+Now you are ready to make predictions. Load the model and give it data. Like this:
+```python
+from prophet.serialize import model_from_json
+df_predict_all = predict(Path('./zh-models/totalconsumption_rolling7day.json'), df_data, 'consumption_total')
+```
+You can find [a more detailed script here](https://github.com/nzzdev/st-methods/blob/master/bots/strom-charts-ch/prediction_zuerich.py).
 
 ## Good to know
 Columns:
@@ -20,15 +42,6 @@ Columns:
 * `NE7` (Netzebene 7) = Households, small Companies (KMU)
 
 [More infos here](https://www.swissgrid.ch/de/home/operation/power-grid/grid-levels.html)
-
-## Installation
-*For Mac M1, goto: Next Chapter*
-```
-python3.8 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
-```
-
 
 ## Installation on Mac M1
 Mac Silicon is a pain... again... Scikit-Learn needs a lot of love to get installed. And Prophet does not work on newest Python Version on Mac M1 (error Message: `python3.10/site-packages/prophet/stan_model/prophet_model.bin Reason: image not found`)... And do not use the newest prophet version (1.1), you need 1.0... So:  
