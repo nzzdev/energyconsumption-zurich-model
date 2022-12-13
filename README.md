@@ -1,5 +1,5 @@
 # Model: Energy Consumption in Zurich
-This is the model, made by [Zurich City Electricity Company (ewz)](https://www.ewz.ch/), rewritten by [shu](https://www.nzz.ch/impressum/simon-huwiler-shu-ld.1650592) for [Neue Zürcher Zeitung](https://www.nzz.ch/). Further information at [ewz](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html). See [daily updated charts here](https://www.nzz.ch/-ld.1710613).
+This is the model, made by [Zurich City Electricity Company (ewz)](https://www.ewz.ch/), rewritten by [shu](https://www.nzz.ch/impressum/simon-huwiler-shu-ld.1650592) for [Neue Zürcher Zeitung](https://www.nzz.ch/). Further information at [ewz](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html). See [daily updated charts here](https://www.nzz.ch/visuals/diese-grafiken-zeigen-ob-zuerich-strom-spart-ld.1710613).
 
 <p align="center">
   <img src="doc/chart.png" alt="Energy Consumption in Zurich" width="500"/>
