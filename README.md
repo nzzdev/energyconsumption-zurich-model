@@ -1,4 +1,4 @@
-# Model: Energy Consumption in Zurich
+# Prediction Model: Energy Consumption in Zurich
 Here you can find the prediction model for Zurich, made by [Zurich City Electricity Company (ewz)](https://www.ewz.ch/), rewritten by [shu](https://www.nzz.ch/impressum/simon-huwiler-shu-ld.1650592) for [Neue Zürcher Zeitung](https://www.nzz.ch/). Further information at [ewz](https://www.ewz.ch/de/ueber-ewz/newsroom/aus-aktuellem-anlass/versorgung-sichergestellt/energieverbrauch-stadt-zuerich.html). See [daily updated charts here](https://www.nzz.ch/visuals/diese-grafiken-zeigen-ob-zuerich-strom-spart-ld.1710613).
 
 <p align="center">
